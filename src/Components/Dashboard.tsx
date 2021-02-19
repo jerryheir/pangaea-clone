@@ -19,6 +19,11 @@ const Dashboard: React.FC = () => {
     const toggleCart = (item: any) => {
         if (!open){
             dispatch(updateCart(item, true));
+        }
+        animate();
+    }
+    const animate = () => {
+        if (!open){
             dispatch(toggleMenu());
             Animated.timing(animateMenu.current, {
                 toValue: 1,
@@ -65,7 +70,7 @@ const Dashboard: React.FC = () => {
                         right: position
                     }}
                     >
-                        <SideMenu onClose={toggleCart} />
+                        <SideMenu onClose={animate} />
                     </Animated.View>
                 </Animated.View>
             }
@@ -80,7 +85,7 @@ const Dashboard: React.FC = () => {
                     return (
                         <View style={styles.dashboardContainer}>
                             <HeaderAtom 
-                            onCartPress={toggleCart}
+                            onCartPress={animate}
                             />
                             <ScrollView 
                             contentContainerStyle={{ flex: 1, backgroundColor: colors.bgColor }}

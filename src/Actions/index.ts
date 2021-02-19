@@ -42,7 +42,6 @@ export const updateCart = (object: any, add: boolean) => (dispatch: any, getStat
       quantity: 1
     }]
   }
-  console.log('NEW CART', newCart)
   dispatch({
     type: actionTypes.UPDATE_CART,
     payload: newCart

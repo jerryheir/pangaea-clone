@@ -47,6 +47,10 @@ const SideMenu = ({ onClose }: any) => {
                     item={item}
                     />)
                 })}
+                {
+                    cart.length === 0 &&
+                    <Text style={styles.listTitle}>There are no items in your cart.</Text>
+                }
             </ScrollView>
             <View style={styles.sideMenuFooter}>
                 <View style={{

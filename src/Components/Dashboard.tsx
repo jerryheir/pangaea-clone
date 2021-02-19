@@ -79,7 +79,9 @@ const Dashboard: React.FC = () => {
                     }
                     return (
                         <View style={styles.dashboardContainer}>
-                            <HeaderAtom />
+                            <HeaderAtom 
+                            onCartPress={toggleCart}
+                            />
                             <ScrollView 
                             contentContainerStyle={{ flex: 1, backgroundColor: colors.bgColor }}
                             style={{ flex: 1, backgroundColor: colors.bgColor }}

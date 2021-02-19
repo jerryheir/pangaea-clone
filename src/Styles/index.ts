@@ -180,5 +180,12 @@ export const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    cartLogoText: {
+        fontSize: 16,
+        fontFamily: 'Bau',
+        position: 'absolute',
+        top: -10,
+        right: -10
     }
 })

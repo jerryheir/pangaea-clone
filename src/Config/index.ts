@@ -1,0 +1,1 @@
+export const BASE_URL = `https://pangaea-interviews.now.sh/api/graphql`;

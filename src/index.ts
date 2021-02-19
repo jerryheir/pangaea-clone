@@ -1,5 +1,6 @@
 import { AppRegistry } from 'react-native';
 import App from './App';
+import './Styles/fonts.css';
 import reportWebVitals from './reportWebVitals';
 
 AppRegistry.registerComponent('App', () => App);

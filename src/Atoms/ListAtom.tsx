@@ -9,14 +9,10 @@ const ListAtom = ({ item, onPress }: any) => {
     const { currency } = useSelector((state: any) =>state.main);
     const device = width < 768;
     return (
-        <View style={{
+        <View style={[styles.listAtomContainer, {
             width: device ? ((width - 60)/2) : ((width - 160)/3),
-            marginVertical: 40,
-            height: 300,
             marginHorizontal: device ? 10 : 20, 
-            alignItems: 'center',
-            justifyContent: 'space-between'
-        }}>
+        }]}>
             <Image 
             source={{ uri: item.image_url }}
             style={styles.listImage}

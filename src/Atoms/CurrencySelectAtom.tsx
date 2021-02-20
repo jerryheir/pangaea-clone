@@ -19,12 +19,13 @@ const CurrencySelectAtom = ({ onChange, value }: any) => {
                         <select
                         style={{ 
                             display: 'flex',
-                            width: 60,
+                            width: 70,
                             height: 25,
                             borderWidth: 0,
                             backgroundColor: colors.white,
                             fontFamily: 'Bau',
-                            fontSize: 14
+                            fontSize: 14,
+                            // WebkitAppearance: 'none'
                         }}
                         onChange={(e)=>onChange(e.target.value)}
                         value={value}

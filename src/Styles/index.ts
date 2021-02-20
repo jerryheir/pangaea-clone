@@ -15,8 +15,8 @@ export const styles = StyleSheet.create({
     },
     cardListCloseIcon: {
         position: 'absolute',
-        top: 11,
-        right: 11,
+        top: 5,
+        right: 5,
         zIndex: 99
     },
     cardListFirstView: {
@@ -54,11 +54,11 @@ export const styles = StyleSheet.create({
         fontSize: 18
     },
     cartListImage: {
-        width: 124,
+        width: 104,
         height: '60%'
     },
     currencySelectContainer: {
-        width: 70,
+        width: 85,
         height: 25,
         marginLeft: 20,
         alignItems: 'center',
@@ -187,5 +187,49 @@ export const styles = StyleSheet.create({
         position: 'absolute',
         top: -10,
         right: -10
+    },
+    dashboardScrollView: { 
+        flex: 1, 
+        backgroundColor: colors.bgColor 
+    },
+    dashboardContainer: {
+        flex: 1
+    },
+    dashboardSection: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingVertical: 40,
+        height: 250,
+        backgroundColor: colors.lighterBg,
+        flexWrap: 'wrap',
+    },
+    dashboardWrap: {
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap'
+    },
+    productHeaderText: {
+        fontFamily: 'Benne',
+        fontSize: 42,
+        color: colors.black
+    },
+    productHeaderSubText: {
+        fontFamily: 'Bau',
+        fontSize: 16,
+        color: colors.black
+    },
+    listAtomContainer: {
+        marginVertical: 40,
+        height: 300,
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
+    selectAtomContainer: {
+        height: 57,
+        borderWidth: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: colors.white
     }
 })

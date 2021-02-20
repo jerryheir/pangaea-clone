@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { View, ScrollView, Text, Animated, StyleSheet, useWindowDimensions } from 'react-native';
+import { View, ScrollView, Text, Animated, useWindowDimensions } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Query } from 'react-apollo';
 import { PRODUCT_QUERY } from '../Queries';
@@ -9,6 +9,7 @@ import { colors } from '../Styles/Colors';
 import { toggleMenu, saveProducts, updateCart } from "../Actions";
 import ListAtom from '../Atoms/ListAtom';
 import SideMenu from './SideMenu';
+import { styles } from '../Styles';
 
 const Dashboard: React.FC = () => {
     const animateMenu = useRef(new Animated.Value(0));
@@ -67,7 +68,8 @@ const Dashboard: React.FC = () => {
                         position: 'absolute',
                         top: 0,
                         bottom: 0,
-                        right: position
+                        right: position,
+                        zIndex: 999
                     }}
                     >
                         <SideMenu onClose={animate} />
@@ -89,7 +91,7 @@ const Dashboard: React.FC = () => {
                             />
                             <ScrollView 
                             contentContainerStyle={{ flex: 1, backgroundColor: colors.bgColor }}
-                            style={{ flex: 1, backgroundColor: colors.bgColor }}
+                            style={styles.dashboardScrollView}
                             >
                                 <View style={[styles.dashboardSection, { paddingHorizontal: device ? 20 : 40 }]}>
                                     <View>
@@ -99,12 +101,7 @@ const Dashboard: React.FC = () => {
                                     <SelectAtom />
                                 </View>
                                 <View>
-                                    <View style={{
-                                        paddingHorizontal: device ? 10 : 20,
-                                        flex: 1,
-                                        flexDirection: 'row',
-                                        flexWrap: 'wrap'
-                                    }}>
+                                    <View style={[styles.dashboardWrap, { paddingHorizontal: device ? 10 : 20 }]}>
                                         {
                                             data.products && data.products.length > 0 && data.products.map((item: any, key: number)=>{
                                                 return (
@@ -128,28 +125,3 @@ const Dashboard: React.FC = () => {
 }
 
 export default Dashboard;
-
-const styles = StyleSheet.create({
-    dashboardContainer: {
-        flex: 1
-    },
-    dashboardSection: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingVertical: 40,
-        height: 250,
-        backgroundColor: colors.lighterBg,
-        flexWrap: 'wrap',
-    },
-    productHeaderText: {
-        fontFamily: 'Benne',
-        fontSize: 42,
-        color: colors.black
-    },
-    productHeaderSubText: {
-        fontFamily: 'Bau',
-        fontSize: 16,
-        color: colors.black
-    }
-})

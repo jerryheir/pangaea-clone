@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { View, useWindowDimensions } from 'react-native';
+import { styles } from '../Styles';
 import { colors } from '../Styles/Colors';
 
 const SelectAtom = ({ onChange, value, items }: any) => {
@@ -8,15 +9,10 @@ const SelectAtom = ({ onChange, value, items }: any) => {
     const { width } = useWindowDimensions();
     const device = width < 768;
     return (
-        <View style={{
+        <View style={[styles.selectAtomContainer, {
             width: device ? width - 40 : 400,
-            height: 57,
-            borderColor: focused ? colors.black : colors.lighterGreen,
-            borderWidth: 1,
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: colors.white
-        }}>
+            borderColor: focused ? colors.black : colors.lighterGreen
+        }]}>
             <select
             ref={selected}
             onFocus={()=> setFocus(true)}
@@ -28,7 +24,8 @@ const SelectAtom = ({ onChange, value, items }: any) => {
                 borderWidth: 0,
                 backgroundColor: colors.white,
                 fontFamily: 'Bau',
-                fontSize: 16
+                fontSize: 16,
+                WebkitAppearance: 'none'
             }}
             onChange={onChange}
             value={value}
